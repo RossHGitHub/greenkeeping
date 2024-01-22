@@ -7,6 +7,7 @@
 </head>
 <body>
     <script src="./main.js" defer></script>
+    <script src="../src/weatherAPICalls.js" defer></script>
 
     <div class="sidebar" id="sidebar">
         <div class="sidebarLeft">
@@ -47,7 +48,25 @@
 
     <div class="mainContent">
 
-    <div class="dashItem" id="dashItemOne"></div>
+    <div class="dashItem" id="dashItemOne">
+      <div id="currentWeather">
+        <p id="currentWeatherDate"></p>
+           <h3 id="currentWeatherTemp"></h3>
+       
+        <p id="currentWeatherET"></p>
+      </div>
+      <div id="weatherPlusOne">
+        <p id="weatherPlusOneDate"></p>
+        <h3 id="weatherPlusOneTemp"></h3>
+      
+        <p id="weatherPlusOneET"></p>
+      </div>
+      <div id="weatherPlusTwo">
+        <p id="weatherPlusTwoDate"></p>
+        <h3 id="weatherPlusTwoTemp"></h3>
+        <p id="weatherPlusTwoET"></p>
+      </div>
+    </div>
     <div class="dashItem" id="dashItemTwo"></div>
     <div class="dashItem" id="dashItemThree"></div>
     </div>
