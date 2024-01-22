@@ -7,7 +7,7 @@
 </head>
 <body>
     <script src="./main.js" defer></script>
-    <script src="../src/weatherAPICalls.js" defer></script>
+    <script type="module" src="../src/weatherFiles/weatherUpdate.js"></script>
 
     <div class="sidebar" id="sidebar">
         <div class="sidebarLeft">
@@ -52,6 +52,14 @@
       <div id="currentWeather">
         <p id="currentWeatherDate"></p>
            <h3 id="currentWeatherTemp"></h3>
+           <div class="weatherData">
+           <p id="currentWeatherPrecip"></p>
+           <p id="currentWeatherDewPoint"></p>
+           <p id="currentWeatherWind"></p>
+           <p id="currentWeatherSoilTemp"></p>
+           <p id="currentWeatherSoilMoisture"></p>
+           <p id="currentWeatherETR"></p>
+          </div>
        
         <p id="currentWeatherET"></p>
       </div>

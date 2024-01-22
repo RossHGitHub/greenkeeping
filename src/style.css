@@ -99,3 +99,17 @@ body{
         margin-left: 0; /* Adjust the margin for smaller screens */
     }
 }
+
+#currentWeather{
+    height: inherit;
+    width: 300px;
+    font-size: 12px;
+}
+
+.weatherData{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    line-height: 4px;
+}
