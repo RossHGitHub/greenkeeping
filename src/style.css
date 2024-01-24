@@ -54,7 +54,7 @@ body{
     justify-content: space-between;
     background-color: rgb(250, 250, 250);
     border-bottom:1px solid rgb(197, 197, 197);
-    height: 80px;
+    height: 40px;
     padding: 0 20px 0 20px;
 }
 
@@ -75,12 +75,13 @@ body{
     filter:drop-shadow(1px 1px 5px rgb(200, 200, 200));
     margin: 30px;
     width: 300px;
+   
     
 
 }
 
 #dashItemOne{
-    height: 150px;
+    height: 190px;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -102,14 +103,55 @@ body{
 
 #currentWeather{
     height: inherit;
-    width: 300px;
+    width: 400px;
     font-size: 12px;
-}
-
-.weatherData{
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-radius: 1px;
+    overflow:scroll
+}
+
+
+.weatherTime{
+    flex-grow: 1;
+    width: inherit;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 20px;
+}
+
+#weatherPlusOne {
+    height: inherit;
+    width: 300px;
+    font-size: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-radius: 1px;
+    overflow: scroll;
+}
+
+#weatherPlusOneTime {
+    background-color: rgb(123, 123, 123);
+}
+
+.weatherSubElement{
+    height:150px;
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    line-height: 4px;
+    border-left: 1px solid gray;
+    padding-left: 5px;
 }
+

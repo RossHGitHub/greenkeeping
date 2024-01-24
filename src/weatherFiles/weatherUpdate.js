@@ -1,32 +1,39 @@
 import { getData, storeData } from "./weatherAPICalls.js";
 
-let currentWeatherDateDiv = document.getElementById('currentWeatherDate');
-let currentWeatherTempDiv = document.getElementById('currentWeatherTemp');
-let currentWeatherPrecipDiv = document.getElementById('currentWeatherPrecip');
-let currentWeatherDewPointDiv = document.getElementById('currentWeatherDewPoint');
-let currentWeatherSoilTempDiv = document.getElementById('currentWeatherSoilTemp');
-let currentWeatherSoilMoistureDiv = document.getElementById('currentWeatherSoilMoisture');
-let currentWeatherETRDiv = document.getElementById('currentWeatherETR');
+const currentTemp = document.getElementById('currentWeatherTemp');
+const currentHighLow = document.getElementById('currentHighLowTemp');
+const currentWind = document.getElementById('currentWeatherWind');
+const currentPrecipitation = document.getElementById('currentWeatherPrecip');
+const currentRelHumidity = document.getElementById('currentRelHumidity');
+const currentDewPoint = document.getElementById('currentWeatherDewPoint');
+const currentPrecipChance = document.getElementById('currentWeatherPrecipChance');
+const currentAirPressure = document.getElementById('currentWeatherAirPressure');
+const currentRefETR = document.getElementById('currentWeatherRefETR');
+let currentTimeDiv = document.getElementById('currentTime')
 
 
-let weatherPlusOneTempDiv = document.getElementById('weatherPlusOneTemp');
-let weatherPlusOneDateDiv = document.getElementById('weatherPlusOneDate');
-let weatherPlusOneETDiv = document.getElementById('weatherPlusOneET');
-
-let weatherPlusTwoTempDiv = document.getElementById('weatherPlusTwoTemp');
-let weatherPlusTwoDateDiv = document.getElementById('weatherPlusTwoDate');
-let weatherPlusTwoETDiv = document.getElementById('weatherPlusTwoET');
 
 
 async function weatherDOMUpdate(data){
-    console.log(data);
-    currentWeatherDateDiv.innerHTML = data.currentDate;
-    currentWeatherTempDiv.innerHTML = `${data.currentWeatherMax}°C`;
-    currentWeatherPrecipDiv.innerHTML = `Precipitation: ${data.currentWeatherPrecip}mm`;
-    currentWeatherDewPointDiv.innerHTML = `Dew Point: ${data.currentWeatherDewPoint} °C`;
-    currentWeatherSoilTempDiv.innerHTML = `Soil Temp 3-9cm: ${data.currentWeatherSoilTemp}m³/m³`
-    currentWeatherSoilMoistureDiv.innerHTML = `Soil Moisture: ${data.currentWeatherSoilMoisture}°C`;
-    currentWeatherETRDiv.innerHTML = `Reference Evapotranspiration (ET₀): ${data.currentWeatherETR}mm`;
+
+    currentTemp.innerHTML = `${data.currentTemp}°C`;
+    currentHighLow.innerHTML = `High: ${data.highTemp[0]}°C /  Low: ${data.lowTemp[0]}°C`;
+    currentWind.innerHTML = `Wind: ${data.windSpeed[0]}km/h`;
+    currentPrecipitation.innerHTML = `${data.currentPrecip}mm`;
+    currentRelHumidity.innerHTML = `${data.relHumidity[0]}% RH`;
+    currentDewPoint.innerHTML = `${data.dewPoint[0]}°C Dew Point`
+    currentPrecipChance.innerHTML = `${data.precipProb[0]}%`;
+    currentAirPressure.innerHTML = `Air Pressure: ${data.airPressure[0]} hPa`
+    currentRefETR.innerHTML = `Ref ETR (ET₀): ${data.refETR[0]}mm`;
+
+    
+    let currentTimeStamp = new Date();
+    let currentHour = currentTimeStamp.getHours();
+    let currentMinute = currentTimeStamp.getMinutes();
+    let formattedTime = `${currentHour}:${currentMinute.toString().padStart(2, '0')}`;
+
+    currentTimeDiv.innerHTML= `As of: ${formattedTime}`;
+
    
 
  
