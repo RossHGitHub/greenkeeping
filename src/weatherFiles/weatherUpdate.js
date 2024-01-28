@@ -1,5 +1,6 @@
 import { getData, storeData } from "./weatherAPICalls.js";
 import { displayFutureDays } from "../dateAndTime.js";
+export {processData};
 
 const currentTemp = document.getElementById('currentWeatherTemp');
 const currentHighLow = document.getElementById('currentHighLowTemp');
@@ -31,7 +32,6 @@ const weatherPlusTwoPrecipChance = document.getElementById('weatherPlusTwoPrecip
 const weatherPlusTwoAirPressure = document.getElementById('weatherPlusTwoAirPressure');
 const weatherPlusTwoRefETR = document.getElementById('weatherPlusTwoRefETR');
 
-let currentTimeDiv = document.getElementById('currentTime')
 let weatherPlusOneTime = document.getElementById('weatherPlusOneTime');
 let weatherPlusTwoTime = document.getElementById('weatherPlusTwoTime');
 
@@ -86,13 +86,19 @@ function weatherDaysUpdate(){
 
 }
 
+
+
+
 async function processData(){
     try{
 let data = await getData();
 let storedData = await storeData(data);
 await weatherDaysUpdate();
 await weatherDOMUpdate(storedData)
+
     }
+
+
     catch {
     }
 }
