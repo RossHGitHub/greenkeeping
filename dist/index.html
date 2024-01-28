@@ -49,10 +49,10 @@
     <div class="mainContent">
 
     <div class="dashItem" id="dashItemOne">
-      <div id="currentWeather">
+      <div id="currentWeather" class="weatherItemWrap">
         <div id="currentWeatherTime" class="weatherTime">
          
-          <div id="currentTime"></div>
+          <div id="currentTime">Now</div>
         </div>
 
         <div id="currentWeatherTempDiv" class="weatherSubElement">Temp
@@ -73,46 +73,70 @@
           <p id="currentWeatherRefETR"></p>
           
         </div>
-
+      </div>
 
      
        
-      </div>
-      <div id="weatherPlusOne">
-        <div id="weatherPlusOneTime" class="weatherTime">
-            +24 Hours
-            <div id="weatherPlusOneCurrentTime"></div>
-            <p id="weatherPlusOneDate"></p>
-        </div>
-    
-        <div id="weatherPlusOneTempDiv" class="currentWeatherTempDiv">
-            Temp
-            <h3 id="weatherPlusOneTemp"></h3>
+      
+      <div id="weatherPlusOne" class="weatherItemWrap">
+          <div id="weatherPlusOneTimeDiv" class="weatherTime">
+           
+            <div id="weatherPlusOneTime"></div>
+          </div>
+  
+          <div id="weatherPlusOneTempDiv" class="weatherSubElement">Temp
+            <h2 id="weatherPlusOneTemp"></h2>
+            <p id="weatherPlusOneHighLowTemp"></p>
             <p id="weatherPlusOneWind"></p>
-        </div>
-    
-        <div id="weatherPlusOnePrecipDiv" class="precip">
-            Precip
-            <h3 id="weatherPlusOnePrecip"></h3>
+          </div>
+  
+          <div id="weatherPlusOnePrecipDiv" class="weatherSubElement"> Precip
+            <h2 id="weatherPlusOnePrecip"></h2>
+            <p id="weatherPlusOneRelHumidity"></p>
             <p id="weatherPlusOneDewPoint"></p>
-        </div>
-    
-        <div id="weatherPlusOneExtraWeatherDataDiv" class="currentExtraWeatherData">
-            <p id="weatherPlusOneSoilTemp"></p>
-            <p id="weatherPlusOneSoilMoisture"></p>
-            <p id="weatherPlusOneETR"></p>
-        </div>
-    
-        <p id="weatherPlusOneET"></p>
-    </div>
-    
+          </div>
+          
+          <div id="weatherPlusOneExtra" class="weatherSubElement"> Chance of Precip
+            <h2 id="weatherPlusOnePrecipChance"></h2>
+            <p id="weatherPlusOneAirPressure"></p>
+            <p id="weatherPlusOneRefETR"></p>
+          </div>
+      </div>
 
 
+
+
+          <div id="weatherPlusTwo" class="weatherItemWrap">
+            <div id="weatherPlusTwoTimeDiv" class="weatherTime">
+             
+              <div id="weatherPlusTwoTime"></div>
+            </div>
+    
+            <div id="weatherPlusTwoTempDiv" class="weatherSubElement">Temp
+              <h2 id="weatherPlusTwoTemp"></h2>
+              <p id="weatherPlusTwoHighLowTemp"></p>
+              <p id="weatherPlusTwoWind"></p>
+            </div>
+    
+            <div id="weatherPlusTwoPrecipDiv" class="weatherSubElement"> Precip
+              <h2 id="weatherPlusTwoPrecip"></h2>
+              <p id="weatherPlusTwoRelHumidity"></p>
+              <p id="weatherPlusTwoDewPoint"></p>
+            </div>
+            
+            <div id="weatherPlusTwoExtra" class="weatherSubElement"> Chance of Precip
+              <h2 id="weatherPlusTwoPrecipChance"></h2>
+              <p id="weatherPlusTwoAirPressure"></p>
+              <p id="weatherPlusTwoRefETR"></p>
+            </div>
+  
+
+      </div>
     </div>
     <div class="dashItem" id="dashItemTwo"></div>
     <div class="dashItem" id="dashItemThree"></div>
     </div>
 
-    
+    </div>
 </body>
 </html>

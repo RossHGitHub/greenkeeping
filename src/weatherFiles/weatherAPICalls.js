@@ -4,7 +4,7 @@ export {storeData, getData};
 
 async function getData(){
     try{
-        let basic = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=55&longitude=-1.6167&current=temperature_2m,precipitation&hourly=relative_humidity_2m,dew_point_2m,precipitation_probability,pressure_msl&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max,et0_fao_evapotranspiration&forecast_days=3`)
+        let basic = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=55&longitude=-1.6167&current=temperature_2m,precipitation&hourly=temperature_2m,relative_humidity_2m,dew_point_2m,precipitation_probability,pressure_msl&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max,et0_fao_evapotranspiration&wind_speed_unit=mph`)
         let jBasic = await basic.json()
         console.log(jBasic);
          return {jBasic};
