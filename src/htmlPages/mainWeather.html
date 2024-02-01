@@ -7,7 +7,7 @@
 </head>
 <body>
     <script src="../../dist/main.js" defer></script>
-    <script type="module" src="../weatherFiles/mainWeatherUpdate.js"></script>
+    <script type="module" src="../weatherFiles/mainWeatherUpdate.js" defer></script>
 
     <div class="sidebar" id="sidebar">
         <div class="sidebarLeft">
@@ -64,9 +64,10 @@
         <h2 class="headerTitle">Weather</h2>
         <button class="signInButton">Log In / Sign Up</button>
     </header>
-
-    <div class="mainContent">
+  
+      <h1 id="weatherHeader">Seven Day Forecast</h1>
         <div id="weatherWrapper"></div>
-    </div>
+   
+ 
 </body>
 </html>

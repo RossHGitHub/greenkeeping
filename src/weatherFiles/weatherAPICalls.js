@@ -1,3 +1,4 @@
+import {weatherDaysUpdate, weatherDOMUpdate} from "./weatherUpdate.js";
 export {storeData, getData};
 
 
@@ -53,4 +54,6 @@ async function getData(){
 
     }
 
-   
+
+    
+    

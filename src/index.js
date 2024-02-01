@@ -1,6 +1,2 @@
 import './style.css';
-export { test }
-
-function test(){
-
-} 
+import { processData } from './weatherFiles/weatherAPICalls';

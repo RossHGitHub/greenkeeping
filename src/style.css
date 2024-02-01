@@ -92,6 +92,7 @@ body{
     background-color: white;
     flex-wrap: wrap;
     flex-grow: 1;
+    overflow: hidden;
 
 
 }
@@ -183,12 +184,24 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: scroll;
+    width: inherit;
 }
 
 .mainWeatherWrap{
-    height: 600px;
+    height: 400px;
     width: 150px;
     border-radius: 5px;
     border: 1px solid gray;
     filter:drop-shadow(1px 1px 5px rgb(200, 200, 200));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#weatherHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

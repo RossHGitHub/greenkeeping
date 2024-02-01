@@ -1,6 +1,6 @@
 import { getData, storeData } from "./weatherAPICalls.js";
 import { displayFutureDays } from "../dateAndTime.js";
-export {processData};
+export {weatherDaysUpdate, weatherDOMUpdate};
 
 const currentTemp = document.getElementById('currentWeatherTemp');
 const currentHighLow = document.getElementById('currentHighLowTemp');
@@ -38,7 +38,7 @@ let weatherPlusTwoTime = document.getElementById('weatherPlusTwoTime');
 
 
 
-async function weatherDOMUpdate(data){
+function weatherDOMUpdate(data){
 
     currentTemp.innerHTML = `${data.currentTemp}°C`;
     currentHighLow.innerHTML = `High: ${data.highTemp[0]}°C /  Low: ${data.lowTemp[0]}°C`;
@@ -51,7 +51,8 @@ async function weatherDOMUpdate(data){
     currentRefETR.innerHTML = `Reference (ET₀): ${data.refETR[0]}mm`;
 
     let estWeatherOne = ((data.highTemp[1] + data.lowTemp[1])/2)
-    weatherPlusOneTemp.innerHTML = `${estWeatherOne}°C`;
+    let estRoundedOne = Math.round(estWeatherOne * 10) / 10;
+    weatherPlusOneTemp.innerHTML = `${estRoundedOne}°C`;
     weatherPlusOneHighLow.innerHTML = `High: ${data.highTemp[1]}°C /  Low: ${data.lowTemp[1]}°C`;
     weatherPlusOneWind.innerHTML = `Wind: ${data.windSpeed[1]} mp/h`;
     weatherPlusOnePrecipitation.innerHTML = `N/A`;
@@ -62,7 +63,8 @@ async function weatherDOMUpdate(data){
     weatherPlusOneRefETR.innerHTML = `Reference (ET₀): ${data.refETR[1]}mm`;
 
     let estWeatherTwo = ((data.highTemp[2]+ data.lowTemp[2])/2)
-    weatherPlusTwoTemp.innerHTML = `${estWeatherTwo}°C`;
+    let estRoundedTwo = Math.round(estWeatherTwo * 10) / 10;
+    weatherPlusTwoTemp.innerHTML = `${estRoundedTwo}°C`;
     weatherPlusTwoHighLow.innerHTML = `High: ${data.highTemp[2]}°C /  Low: ${data.lowTemp[2]}°C`;
     weatherPlusTwoWind.innerHTML = `Wind: ${data.windSpeed[2]} mp/h`;
     weatherPlusTwoPrecipitation.innerHTML = `N/A`;
@@ -91,17 +93,20 @@ function weatherDaysUpdate(){
 
 async function processData(){
     try{
+        
 let data = await getData();
+
 let storedData = await storeData(data);
-await weatherDaysUpdate();
-await weatherDOMUpdate(storedData)
+weatherDaysUpdate();
+weatherDOMUpdate(storedData);
+
 
     }
 
 
     catch {
+        console.log('processData Err');
     }
 }
 
 processData();
-
