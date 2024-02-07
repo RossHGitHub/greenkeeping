@@ -1,4 +1,4 @@
-export { displayFutureDays };
+export { displayFutureDays, displayFutureDay };
 
 
 function displayFutureDays() {
@@ -28,6 +28,14 @@ function displayFutureDays() {
           day148HoursFromNow}
 
 };
+
+function displayFutureDay(hours){
+  let currentDate = new Date();
+  let date = new Date(currentDate.getTime() + hours * 60 * 60 * 1000);
+  let formattedDate = formatDateWithDay(date);
+
+  return { formattedDate }
+}
 
 
 // Function to format the date with day name and ordinal suffix for the day

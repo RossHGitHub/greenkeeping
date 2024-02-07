@@ -71,8 +71,9 @@ body{
 .mainContentRight{
     display: flex;
     flex-direction: column;
-    width: inherit;
     margin-left: 210px;
+    width: calc(100vw - 210px); /* Subtract the width of the sidebar */
+    margin-left: 210px; /* Keep the initial margin for the sidebar */
 
  
 }
@@ -184,13 +185,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: scroll;
-    width: inherit;
+    width: calc(100vw - 210px); /* Subtract the width of the sidebar */
+    flex-wrap: wrap;
+ 
 }
 
 .mainWeatherWrap{
     height: 400px;
-    width: 150px;
+    min-width: 170px;
+    max-width: 220px;
+    flex-grow: 1;
     border-radius: 5px;
     border: 1px solid gray;
     filter:drop-shadow(1px 1px 5px rgb(200, 200, 200));
@@ -198,10 +202,30 @@ body{
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    margin: 20px;
+  
 }
 
 #weatherHeader{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.weatherDate{
+    background-color: rgb(49, 126, 49);
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.weatherItem{
+    border-bottom: 1px solid rgb(219, 219, 219);
+    width: 100%;
+}
+
+.webInfo{
+    color: gray;
+    margin: 30px;
 }

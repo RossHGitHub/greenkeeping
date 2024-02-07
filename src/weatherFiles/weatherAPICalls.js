@@ -30,6 +30,7 @@ async function getData(){
             let precipProb = weather.jBasic.hourly.precipitation_probability;
             let airPressure = weather.jBasic.hourly.pressure_msl;
             let refETR = weather.jBasic.daily.et0_fao_evapotranspiration;
+            let hourTemp = weather.jBasic.hourly.temperature_2m;
         
 
 
@@ -44,7 +45,8 @@ async function getData(){
             dewPoint,
             precipProb,
             airPressure,
-            refETR
+            refETR,
+            hourTemp
     
                 }
         }
