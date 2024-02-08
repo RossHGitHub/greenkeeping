@@ -26,9 +26,14 @@ export async function mainWeatherUpdateLoop(data){
 
         let temp = document.createElement('div')
         temp.classList='weatherItem'
+
+        if ( i === 0){
+            temp.innerHTML = `Temperature: ${data.currentTemp}°C`;
+        } else {
         let dayTemp = ((data.highTemp[i] + data.lowTemp[i]) / 2);
         let dayTempFormatted = Math.round(dayTemp * 10) / 10;
         temp.innerHTML = `Temperature: ${dayTempFormatted}°C`;
+        }
 
         let highLowTemp = document.createElement('div');
         highLowTemp.classList='weatherItem'

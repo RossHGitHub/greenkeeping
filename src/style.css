@@ -223,6 +223,7 @@ body{
 .weatherItem{
     border-bottom: 1px solid rgb(219, 219, 219);
     width: 100%;
+    padding: 3px;
 }
 
 .webInfo{
